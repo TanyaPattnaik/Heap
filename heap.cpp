@@ -32,25 +32,48 @@ void insert(int key){
 
 }
 
-/*void remove(){
-  int root=heap[0];
-  heap[0]=heap[size-1];
-  size--;
+void remove(){
   
-  int curr=heap[0];
-  int j=0;
+ //int root=heap[0];
+ size--;
+ heap[0]=heap[size];
+ 
+ int i=0;
+int m=i;
+while(i<size){
+ int l=2*i+1;
+ int r=2*i+2;                                                                                                                           
+ if(l<=size && heap[l]>heap[i])
+   {
+    m=l;
+   }
+ if(r<=size && heap[r]>heap[m])
+  {
+   m=r;
+  }
+ if(m!=i)
+  {
+   int max=heap[m];
+   heap[m]=heap[i];
+   heap[i]=max;
+   i=m;
+  }
+else break; 
+}
+
+ 
+ display();
+
+ }
   
-  while(j<size-1){
-    l=2*j+1;
-    r=2*j+2;
-    max=heap[j];
-    if(
-*/
+ 
+
+
 void display(){
  for(int j=0; j<size; j++){
    cout<<heap[j]<<"\t";
   }
-
+ cout<<"\n";
 }
 
 };
@@ -62,7 +85,11 @@ int main(){
   mh.insert(18);
   mh.insert(2);
   mh.insert(5);
+ mh.insert(67);
  mh.insert(20);
  mh.display();
-  return 0;
+mh.remove();  
+
+return 0;
 }
+
