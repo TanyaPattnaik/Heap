@@ -66,7 +66,37 @@ else break;
 
  }
   
- 
+  int m=0;
+
+/*void heapify(int a[], int i, int n)
+ {
+   int root=a[i];
+   a[i]=a[n];
+    
+   
+   
+   
+     int l=2*i+1;
+      int r=2*i+2;
+       if(l<=n && a[l]>a[i])
+          {
+              m=l;
+                 }
+                  if(r<=n && a[r]>a[m])
+                    {
+                       m=r;
+                         }
+                          if(m!=i)
+                            {
+                               int max=heap[m];
+                                  heap[m]=heap[i];
+                                     heap[i]=max;
+ heapify(a, m, n);
+}
+}
+
+*/
+
 
 
 void display(){
