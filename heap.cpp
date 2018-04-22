@@ -16,11 +16,11 @@ heap=new int[100];
 void insert(int key){
  size++;
  int i=size-1;
- heap[i]=key;
+ heap[i]=key;                //most recent element
  
- int p=(i-1)/2;
+ int p=(i-1)/2;              //parent of key
 
- while(heap[p]<heap[i]){
+ while(heap[p]<heap[i]){      //if parent less than child, swap
   int h=heap[p];
   heap[p]=heap[i];
   heap[i]=h;
@@ -39,26 +39,26 @@ void remove(){
  heap[0]=heap[size];
  
  int i=0;
-int m=i;
+int m=i;         //to store index with max
 while(i<size){
- int l=2*i+1;
+ int l=2*i+1;         //left n right child
  int r=2*i+2;                                                                                                                           
  if(l<=size && heap[l]>heap[i])
    {
-    m=l;
+    m=l;                 
    }
  if(r<=size && heap[r]>heap[m])
   {
    m=r;
   }
- if(m!=i)
+ if(m!=i)                 //swap current with max of children
   {
    int max=heap[m];
    heap[m]=heap[i];
    heap[i]=max;
    i=m;
   }
-else break; 
+else break;  
 }
 
  
@@ -97,8 +97,7 @@ else break;
 
 */
 
-
-
+//function to print heap array
 void display(){
  for(int j=0; j<size; j++){
    cout<<heap[j]<<"\t";
